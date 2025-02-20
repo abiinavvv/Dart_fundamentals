@@ -14,6 +14,9 @@ void main() async {
   print("Marks loading");
   await loadMarks();
   print("Marks loaded");
+  await getTime();
+  int result = await getSum(10, 20);
+  print(result);
 
   try {
     var data = await getMarks();
@@ -30,4 +33,15 @@ Future<void> getMarks() async {
 
 Future<void> loadMarks() async {
   await getMarks();
+}
+
+Future<void> getTime() async {
+  await Future.delayed(Duration(seconds: 2));
+  print(DateTime.now());
+}
+
+Future<int> getSum(int a, int b) async {
+  await Future.delayed(Duration(seconds: 2));
+  int sum = a + b;
+  return sum;
 }
