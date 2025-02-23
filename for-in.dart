@@ -3,4 +3,6 @@ void main() {
   for (var nums in arr) {
     print(nums);
   }
+
+  
 }
